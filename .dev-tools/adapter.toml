@@ -1,0 +1,18 @@
+contract = 3
+
+[app]
+name = "eucli-pueue"
+ports = 1
+
+[commands]
+deps   = "python -B .dev-tools/cf-adapter/adapter.py deps"
+build  = "python -B .dev-tools/cf-adapter/adapter.py build"
+start  = "python -B .dev-tools/cf-adapter/adapter.py start"
+health = "python -B .dev-tools/cf-adapter/adapter.py health"
+stop   = "python -B .dev-tools/cf-adapter/adapter.py stop"
+seed   = "python -B .dev-tools/cf-adapter/adapter.py seed"
+test   = "python -B .dev-tools/cf-adapter/adapter.py test"
+
+[quick-build.env]
+CARGO_TARGET_DIR = "${EUCLI_CF_QUICK_BUILD_DIR}/cargo-target"
+CARGO_HOME = "${EUCLI_CF_DEPS_STORE}/cargo"
